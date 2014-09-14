@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Create a CSR for the CA
+openssl req -new -config ca.cnf -keyout ca.key -out ca.csr
+
+# Actually Sign the CA with the CA
+openssl ca -config ca-sign.cnf -extensions X509_ca -days 3650 -create_serial -selfsign -keyfile ca.key -in ca.csr -out ca.crt
+
+# Set the permissions on the CA
+chmod 400 ca.key
+chmod 444 ca.crt

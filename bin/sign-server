@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Sign the CSR as a server
+openssl ca -config ca-sign.cnf -extensions X509_server -in $1.csr -out $1.crt

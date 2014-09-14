@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Create the key and the actual CSR
+openssl req -new -config client.cnf -keyout client.key -out client.csr
+
+# Change the permissions of the key.
+chmod 400 client.key
