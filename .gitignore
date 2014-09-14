@@ -1,0 +1,5 @@
+# Private keys need to remain private and cannot be checked in.
+*.key
+
+# CSR files are intermediate files and do not need to be saved long term.
+*.csr
